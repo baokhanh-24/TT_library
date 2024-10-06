@@ -1,0 +1,44 @@
+﻿@model List<Library.Models.books>
+
+@{
+}
+
+<h1>Books</h1>
+
+<a class="btn btn-primary" asp-controller="Book" asp-action="AddBook">Add book</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Book ID</th>
+			<th>Title</th>
+			<th>Image</th>
+			<th>Subtitle</th>
+			<th>Publishing Year</th>
+			<th>Quantity In Stock</th>
+			<th>Description</th>
+			<th>Create At</th>
+			<th>Update At</th>
+			<th>Delete Flag</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var books in Model)
+		{
+			<tr>
+				<td>@books.books_ID</td>
+				<td>@books.title</td>
+				<td>@books.image</td>
+				<td>@books.subtitle</td>
+				<td>@books.publishing_Year</td>
+				<td>@books.quantity_In_Stock</td>
+				<td>@books.description</td>
+				<td>@books.create_At.ToString("dd-mm-yyyy")</td>
+				<td>@books.update_At.ToString("dd-mm-yyyy")</td>
+				<td>
+					@books.delete_Flag
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model Library.DTO.BookDTO
+
+@{
+}
+
+<form method="post" action="AddBook" class="mt-5">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="title">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Image</label>
+        <input type="text" class="form-control" asp-for="image">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">SubTitle</label>
+        <input type="text" class="form-control" asp-for="subtitle">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Publishing Year</label>
+        <input type="number" class="form-control" asp-for="publishing_Year">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Quantity In Stock</label>
+        <input type="number" class="form-control" asp-for="quantity_In_Stock">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Description</label>
+        <input type="text" class="form-control" asp-for="description">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Create At</label>
+        <input type="date" class="form-control" asp-for="create_At">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Update At</label>
+        <input type="date" class="form-control" asp-for="update_At">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Delete Flag</label>
+        <input type="checkbox" class="form-control" asp-for="delete_Flag">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
