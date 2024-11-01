@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20241006084507_library1")]
-    partial class library1
+    [Migration("20241101041221_lbr")]
+    partial class lbr
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
