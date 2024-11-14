@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Library.DTO.RatingDTO>
+
+@{
+    ViewData["Title"] = "Danh sách Rating";
+}
+
+<h1>List of Ratings</h1>
+
+
+<a asp-action="AddRating" class="btn btn-success">Thêm Rating</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Rating ID</th>
+            <th>Book ID</th>
+            <th>User ID</th>
+            <th>Star</th>
+            <th>Create At</th>
+            <th>Update At</th>
+            <th>Delete Flag</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rating in Model)
+        {
+            <tr>
+                <td>@rating.ratings_ID</td>
+                <td>@rating.books_ID</td>
+                <td>@rating.users_ID</td>
+                <td>@rating.star</td>
+                <td>@rating.create_At.ToString("yyyy-MM-dd")</td>
+                <td>@rating.update_At.ToString("yyyy-MM-dd")</td>
+                <td>@(rating.delete_Flag ? "Deleted" : "Active")</td>
+                <td>
+                    <a asp-action="EditRating" asp-route-id="@rating.ratings_ID" class="btn btn-primary">Edit</a>
+                    <form asp-action="DeleteRating" asp-route-id="@rating.ratings_ID" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa chứ?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
